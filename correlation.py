@@ -14,11 +14,11 @@ def compute_phi(file, event):
   x_true=0
   y_true=0
   for i in range(len(data_dict)):
-    if event in b[i]["events"] and b[i]["squirrel"]:
+    if event in data_dict[i]["events"] and data_dict[i]["squirrel"]:
       both_true+=1
-    elif event in b[i]["events"]:
+    elif event in data_dict[i]["events"]:
       x_true+=1
-    elif b[i]["squirrel"]:
+    elif data_dict[i]["squirrel"]:
       y_true+=1
     else:
       both_false+=1  
