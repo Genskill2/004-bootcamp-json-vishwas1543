@@ -41,13 +41,13 @@ def compute_correlations(file1):
       if j not in event_lol:
         event_lol.append(j)
   for k in event_lol:
-    events[k] = compute_phi(file, k)
+    events[k] = compute_phi(file1, k)
 
   return events
 
 def diagnose(file1):
   journal_file = load_journal(file1)
-  events = compute_correlations(file)
+  events = compute_correlations(file1)
   max_key = max(events, key=events.get)
   min_key = min(events, key=events.get)
   
