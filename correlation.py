@@ -46,7 +46,7 @@ def compute_correlations(file1):
   return events
 
 def diagnose(file1):
-  journal_file = load_journal(file)
+  journal_file = load_journal(file1)
   events = compute_correlations(journal_file)
   max_key = max(events, key=events.get)
   min_key = min(events, key=events.get)
