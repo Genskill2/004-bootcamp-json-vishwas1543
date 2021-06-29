@@ -1,14 +1,13 @@
 # Add the functions in this file
 import json
 import math
-def load_journal(file):
-  with open(file, 'r') as j:
-     contents = json.loads(j.read())
+def load_journal(file1):
+  with open(file1) as j:
+    data = json.load(j)
+    return data  
 
-  return contents
-
-def compute_phi(file, event):
-  data_dict = load_journal(file)
+def compute_phi(file1, event):
+  data_dict = load_journal(file1)
   both_true=0
   both_false=0
   x_true=0
@@ -32,8 +31,8 @@ def compute_phi(file, event):
 
   return corr
 
-def compute_correlations(file):
-  journal_file = load_journal(file)
+def compute_correlations(file1):
+  journal_file = load_journal(file1)
   events ={}
   event_lol=[]
   for i in range(len(journal_file)):
@@ -46,7 +45,7 @@ def compute_correlations(file):
 
   return events
 
-def diagnose(file):
+def diagnose(file1):
   journal_file = load_journal(file)
   events = compute_correlations(journal_file)
   max_key = max(events, key=events.get)
