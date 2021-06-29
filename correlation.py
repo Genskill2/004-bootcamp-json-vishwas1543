@@ -2,7 +2,7 @@
 import json
 import math
 def load_journal(file):
-  with open(journal_file, 'r') as j:
+  with open(file, 'r') as j:
      contents = json.loads(j.read())
 
   return contents
